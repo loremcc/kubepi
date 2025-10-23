@@ -1,1 +1,7 @@
 assets/
+
+# draw.io backups / temp
+*.bkp
+*.bak
+*.tmp
+**/.$*

@@ -26,7 +26,8 @@ services:
       - ollama
     extra_hosts:
       - host.docker.internal:host-gateway
-    restart: unless-stopped
+    restart: unless-stopped 
+
 
   caddy:
     image: caddy:latest

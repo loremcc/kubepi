@@ -1,0 +1,16 @@
+[Unit]
+Description=Start TigerVNC server at startup
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=chilledpanda
+PAMName=login
+PIDFile=/home/chilledpanda/.vnc/%H:%i.pid
+ExecStart=/usr/bin/vncserver %i -geometry 1920x1080 -SecurityTypes=VncAuth,TLSV>
+ExecStop=/usr/bin/vncserver -kill %i
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+fucini.onthewifi.com {
+    reverse_proxy open-webui:8080
+    tls f.ziccolella@protonmail.com
+
+    # Optional: compress responses
+    encode gzip
+
+    # Optional: add basic security headers
+    header {
+        Strict-Transport-Security "max-age=31536000;"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+    }
+}
